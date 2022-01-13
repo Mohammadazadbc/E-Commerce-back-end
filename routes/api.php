@@ -68,5 +68,5 @@ Route::delete('adress/{id}', [adressController::class,'deleteAdress']);
 Route::patch('adress/{id}', [adressController::class,'update']);
 
 
-//log in
+//log in to Member table
 Route::post('login',[memberController::class,'login']);
