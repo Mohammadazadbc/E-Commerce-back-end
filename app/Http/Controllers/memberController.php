@@ -24,6 +24,20 @@ class memberController extends Controller
             return ["data"=>"has been faild"];
         }
     }
+    function update(Request $req, $id){
+        $mem = Members::find($id);
+        $mem->email = $req->email;
+        $mem->username = $req->username;
+        $mem->password = $req->password;
+        $mem->phone = $req->phone;       
+        $rlt = $mem->save();
+        if($rlt){
+            return ["data"=>" updated"];
+        }
+        else{
+             return ["data"=>" updated has been faild"];
+        }
+    }
     function deleteMember($id){
         $dmem = Members::find($id);
         $result = $dmem->delete();

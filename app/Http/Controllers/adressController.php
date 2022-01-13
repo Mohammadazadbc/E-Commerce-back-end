@@ -25,6 +25,21 @@ class adressController extends Controller
             return ["data"=>"has been faild"];
         }
     }
+    function update(Request $req, $id){
+        $mem = Adress::find($id);
+        $mem->city = $req->city;
+        $mem->street = $req->street;
+        $mem->number = $req->number;
+        $mem->zipcode = $req->zipcode;       
+        $mem->member_id = $req->member_id;       
+        $rlt = $mem->save();
+        if($rlt){
+            return ["data"=>" updated"];
+        }
+        else{
+             return ["data"=>" updated has been faild"];
+        }
+    }
     function deleteAdress($id){
         $date = Adress::find($id);
         $resutl = $date->delete();

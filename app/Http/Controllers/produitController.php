@@ -24,6 +24,19 @@ class produitController extends Controller
             return ["data"=>"has been faild"];
         }
     }
+    function update(Request $req, $id){
+        $mem = Produits::find($id);
+        $mem->ProductId = $req->ProductId;
+        $mem->carts_id = $req->carts_id;
+        $mem->quantity = $req->quantity;      
+        $rlt = $mem->save();
+        if($rlt){
+            return ["data"=>" updated"];
+        }
+        else{
+             return ["data"=>" updated has been faild"];
+        }
+    }
     function deleteProduit($id){
         $delpro = Produits::find($id);
         $resutl = $delpro->delete();

@@ -23,6 +23,19 @@ class nameController extends Controller
             return ["data"=>"has been faild"];
         }
     }
+    function update(Request $req, $id){
+        $mem = Name::find($id);
+        $mem->firstname = $req->firstname;
+        $mem->lastname = $req->lastname;
+        $mem->member_id = $req->member_id;     
+        $rlt = $mem->save();
+        if($rlt){
+            return ["data"=>" updated"];
+        }
+        else{
+             return ["data"=>" updated has been faild"];
+        }
+    }
     function deleteName($id){
         $date = Name::find($id);
         $resutl = $date->delete();

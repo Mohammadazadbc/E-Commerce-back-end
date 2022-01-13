@@ -20,6 +20,17 @@ class cartController extends Controller
             return ["data"=>"has been faild"];
         }
     }
+    function update(Request $req, $id){
+        $cart = Carts::find($id);
+        $cart->date = $req->date;    
+        $rlt = $cart->save();
+        if($rlt){
+            return ["data"=>" updated"];
+        }
+        else{
+             return ["data"=>" updated has been faild"];
+        }
+    }
     function deleteProduct($id){
         $date = Carts::find($id);
         $resutl = $date->delete();

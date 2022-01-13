@@ -33,32 +33,40 @@ Route::delete('product/{id}',[ProductController::class,'deleteProduct']);
 Route::get('rate',[RatingCotroller::class,'showRating']);
 Route::post('rate',[RatingCotroller::class,'addRating']);
 Route::delete('rate/{id}',[RatingCotroller::class,'deleteRate']);
+Route::patch('rate/{id}', [RatingCotroller::class,'update']);
 
 //Cart table api
 Route::get('cart', [cartController::class,'showCart']);
 Route::post('cart', [cartController::class,'addCart']);
 Route::delete('cart/{id}', [cartController::class,'deleteProduct']);
+Route::patch('cart/{id}', [cartController::class,'update']);
 
 //Produit
 Route::get('produit', [produitController::class,'showProduit']);
 Route::post('produit', [produitController::class,'addProduit']);
 Route::delete('produit/{id}', [produitController::class,'deleteProduit']);
+Route::patch('produit/{id}', [produitController::class,'update']);
 
 
 // Member table api
 Route::get('member',[memberController::class,'showMember']);
 Route::post('member', [memberController::class,'addMember']);
 Route::delete('member/{id}', [memberController::class,'deleteMember']);
+Route::patch('member/{id}', [memberController::class,'update']);
 
 //Name table api
 Route::get('name',[nameController::class,'showName']);
 Route::post('name', [nameController::class,'addName']);
 Route::delete('name/{id}', [nameController::class,'deleteName']);
+Route::patch('name/{id}', [nameController::class,'update']);
+
 
 //Adress table api
 Route::get('adress',[adressController::class,'showAdress']);
 Route::post('adress', [adressController::class,'addAdress']);
 Route::delete('adress/{id}', [adressController::class,'deleteAdress']);
+Route::patch('adress/{id}', [adressController::class,'update']);
+
 
 //log in
 Route::post('login',[memberController::class,'login']);

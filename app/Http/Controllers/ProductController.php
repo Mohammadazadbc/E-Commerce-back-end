@@ -40,6 +40,7 @@ class ProductController extends Controller
              return ["data"=>" updated has been faild"];
         }
     }
+    
     function deleteProduct($id){
         $dpro = Product::find($id);
         $resutl = $dpro->delete();

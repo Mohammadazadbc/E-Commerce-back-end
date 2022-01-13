@@ -26,6 +26,19 @@ class RatingCotroller extends Controller
         }
     
     }
+    function update(Request $req, $id){
+        $mem = Rating::find($id);
+        $mem->rate = $req->rate;
+        $mem->count = $req->count;
+        $mem->product_id = $req->product_id;  
+        $rlt = $mem->save();
+        if($rlt){
+            return ["data"=>" updated"];
+        }
+        else{
+             return ["data"=>" updated has been faild"];
+        }
+    }
     function deleteRate($id){
         $drate = Rating::find($id);
         $resutl = $drate->delete();
