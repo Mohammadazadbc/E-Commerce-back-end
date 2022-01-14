@@ -18,6 +18,7 @@ class ProductController extends Controller
         $pro->price = $req->price;
         $pro->description = $req->description;
         $pro->category = $req->category;
+        $pro->image = $req->image;
         $resutl = $pro->save();
         if($resutl){
             return ["data"=>"has been save"];
@@ -32,6 +33,7 @@ class ProductController extends Controller
         $upro->price = $req->price;
         $upro->description = $req->description;
         $upro->category = $req->category;       
+        $upro->image = $req->image;       
         $rlt = $upro->save();
         if($rlt){
             return ["data"=>" updated"];
