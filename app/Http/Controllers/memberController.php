@@ -18,10 +18,10 @@ class memberController extends Controller
         $mem->phone = $req->phone;
         $resutl = $mem->save();
         if($resutl){
-            return ["data"=>"has been save"];
+            return ["message"=>"data has been save"];
         }
         else{
-            return ["data"=>"has been faild"];
+            return ["message"=>" data has been faild"];
         }
     }
     function update(Request $req, $id){
@@ -52,11 +52,11 @@ class memberController extends Controller
         $user = Members::where(['username'=>$req->username, 'password'=>$req->password])->first();
     
         if(!$user){
-            return ["username or password "=> "incorrect"];
+            return ["message"=> " username or password incorrect"];
         }
         else{
             
-            return ["you are logged"=>"in"];
+            return ["message"=>"welcome"];
         }
     
     }

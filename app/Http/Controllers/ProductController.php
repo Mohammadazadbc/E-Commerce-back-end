@@ -21,10 +21,10 @@ class ProductController extends Controller
         $pro->image = $req->image;
         $resutl = $pro->save();
         if($resutl){
-            return ["data"=>"has been save"];
+            return ["message"=>"has been save"];
         }
         else{
-            return ["data"=>"has been faild"];
+            return ["message"=>"has been faild"];
         }
     }
     function update(Request $req, $id){
